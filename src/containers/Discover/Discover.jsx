@@ -1,11 +1,11 @@
 import axios from 'axios';
 import React, { Component } from 'react';
+import Card from '../../components/Card/Card';
 
 
 class Discover extends Component {
 
     state = {
-        count: 0,
         image: "",
         cell: "",
         email: "",
@@ -48,19 +48,15 @@ class Discover extends Component {
             <div className="row">
             <div className="col-sm-3"></div>
             <div className="col-sm-6">
-                <div className="card">
-                <div className="col d-flex justify-content-center p-3">
-                    <img src={this.state.image} alt="employee"/>
-                </div>
-                    <div className="card-header col d-flex justify-content-center">
-                    {this.state.firstName} {this.state.lastName}
-                    </div>
-                    <ul className="list-group list-group-flush">
-                        <li className="list-group-item col d-flex justify-content-center">{this.state.cell}</li>
-                        <li className="list-group-item col d-flex justify-content-center">{this.state.email}</li>
-                        <li className="list-group-item  col d-flex justify-content-center">{this.state.city}, {this.state.state}, {this.state.country}</li>
-                    </ul>
-                </div>
+            <Card 
+                image={this.state.image}
+                cell={this.state.cell}
+                email={this.state.email}
+                firstName={this.state.firstName}
+                lastName={this.state.lastName}
+                city={this.state.city}
+                country={this.state.country}
+                state={this.state.state} />
             </div>
             <div className="col-sm-3"></div>
             </div>
