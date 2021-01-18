@@ -8,13 +8,16 @@ function NavTabs() {
   const location = useLocation();
 
   return (
-    <ul className="nav nav-tabs">
-      <li className="nav-item">
+    <ul className="nav nav-tabs navbar navbar-dark bg-primary">
+      <li className="navbar navbar-expand-lg bg-primary navbar-brand col d-flex justify-content-center">
+        EMPLOYEE DIRECTORY
+      </li>
+      <li className="nav-item bg-light">
         <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"}>
           Home
         </Link>
       </li>
-      <li className="nav-item">
+      <li className="nav-item bg-light">
         <Link
           to="/about"
           className={location.pathname === "/about" ? "nav-link active" : "nav-link"}
@@ -22,7 +25,7 @@ function NavTabs() {
           About
         </Link>
       </li>
-      <li className="nav-item">
+      <li className="nav-item bg-light">
         <Link
           to="/discover"
           className={location.pathname === "/discover" ? "nav-link active" : "nav-link"}
@@ -30,7 +33,7 @@ function NavTabs() {
           Discover
         </Link>
       </li>
-      <li className="nav-item">
+      <li className="nav-item bg-light">
         <Link
           to="/search"
           className={location.pathname === "/search" ? "nav-link active" : "nav-link"}
