@@ -1,14 +1,51 @@
 import React, { Component } from 'react';
 import API from "../../API/API.js";
+import SearchForm from "../../components/Search/SearchForm";
+import ResultList from "../../components/Search/ResultList";
 
 class Search extends Component {
-    render() {
-        return (
-            <div>
-                <h1>Search Page</h1>
-            </div>
-        );
+    state = {
+      search: "",
+      results: []
+    };
+  
+    componentDidMount() {
+      this.searchEmployees("male");
     }
-}
-
-export default Search;
+  
+    searchEmployees = query => {
+      API.search(query)
+        .then(res => this.setState({ results: res.data.results }))
+        .catch(err => console.log(err));
+    };
+  
+    handleInputChange = event => {
+      const name = event.target.name;
+      const value = event.target.value;
+      this.setState({
+        [name]: value
+      });
+    };
+  
+    // When the form is submitted, search the Giphy API for `this.state.search`
+    handleFormSubmit = event => {
+      event.preventDefault();
+      this.searchEmployees(this.state.search);
+    };
+  
+    render() {
+      return (
+        <div>
+          <SearchForm
+            search={this.state.search}
+            handleFormSubmit={this.handleFormSubmit}
+            handleInputChange={this.handleInputChange}
+          />
+          <ResultList results={this.state.results} />
+        </div>
+      );
+    }
+  }
+  
+  export default Search;
+  

@@ -61,8 +61,8 @@ class Discover extends Component {
             <div className="col-sm-3"></div>
             </div>
             <div className="row">
-                <div class="col text-center p-3">
-                    <button class="btn btn-dark" onClick={this.getNewEmployee}>NEW</button>
+                <div className="col text-center p-3">
+                    <button className="btn btn-dark" onClick={this.getNewEmployee}>NEW</button>
                  </div>
             </div>
             </>
