@@ -3,22 +3,25 @@ import React from "react";
 function SearchForm(props) {
   return (
     <form>
-      <div className="form-group">
-        <label htmlFor="search">Search:</label>
-        <input
-          onChange={props.handleInputChange}
-          value={props.search}
-          name="search"
-          type="text"
-          className="form-control"
-          placeholder="Search for a Gif"
-          id="search"
-        />
-        <button onClick={props.handleFormSubmit} className="btn btn-primary mt-3">
+     <div className="form-group">
+        <label className="d-flex justify-content-center mt-3" for="exampleFormControlSelect1">Load employees that are:</label>
+        <div className="row">
+          <div className="col-sm-4"></div>
+          <select className="col-sm-4 form-control mt-3" 
+            id="search" 
+            onChange={props.handleInputChange}
+            value={props.search}
+            name="search">
+            <option>male</option>
+            <option>female</option>
+          </select>
+          <button onClick={props.handleFormSubmit} className="btn btn-primary d-flex justify-content-center mt-3">
           Search
         </button>
+          <div className="col-sm-4"></div>
+        </div>
       </div>
-    </form>
+   </form>
   );
 }
 
