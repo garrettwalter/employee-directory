@@ -4,7 +4,7 @@ function SearchForm(props) {
   return (
     <form>
      <div className="form-group">
-        <label className="d-flex justify-content-center mt-3" for="exampleFormControlSelect1">Load employees that are:</label>
+        <label className="d-flex justify-content-center mt-3" htmlFor="exampleFormControlSelect1">Load employees that are:</label>
         <div className="row">
           <div className="col-sm-4"></div>
           <select className="col-sm-4 form-control mt-3" 
@@ -12,6 +12,7 @@ function SearchForm(props) {
             onChange={props.handleInputChange}
             value={props.search}
             name="search">
+              <option>All</option>
             <option>male</option>
             <option>female</option>
           </select>

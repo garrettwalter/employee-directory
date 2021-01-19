@@ -4,7 +4,7 @@ function ResultList(props) {
   return (
     <ul className="list-group">
       {props.results.map(result => (
-        <li className="list-group-item">
+        <li className="list-group-item" key={result.name.first + result.name.last}>
           <img alt={result.name.first} className="img-fluid" src={result.picture.medium} />
           <h3 className="float-right">{result.name.first} {result.name.last}</h3>
           <p>{result.cell}</p>
