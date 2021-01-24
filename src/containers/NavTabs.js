@@ -10,7 +10,7 @@ function NavTabs() {
   return (
     <ul className="nav nav-tabs navbar navbar-dark bg-primary">
       <li className="navbar navbar-expand-lg bg-primary navbar-brand col d-flex justify-content-center">
-        EMPLOYEE DIRECTORY
+        USER DIRECTORY
       </li>
       <li className="nav-item bg-light">
         <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"}>

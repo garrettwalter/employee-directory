@@ -32,6 +32,10 @@ class Search extends Component {
       event.preventDefault();
       this.searchEmployees(this.state.search);
     };
+
+    handleClick = () => {
+        this.state.results.sort((a, b) => (a.last > b.last) ? 1 : -1)
+    }
   
     render() {
       return (
@@ -41,6 +45,14 @@ class Search extends Component {
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
           />
+        <div className="row justify-content-center">
+          <button 
+          search={this.state.search}
+          className="btn btn-primary"
+          onClick={this.handleClick}>
+                Sort By Name
+          </button>
+          </div>
           <ResultList results={this.state.results} />
         </div>
       );
